@@ -1,0 +1,168 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f2f4f8;
+  color: #202536;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 24px;
+  background: #202536;
+  color: white;
+}
+
+.topbar h1 {
+  margin: 0;
+  font-size: 22px;
+}
+
+button {
+  border: 0;
+  border-radius: 8px;
+  padding: 10px 14px;
+  cursor: pointer;
+  background: #5865f2;
+  color: white;
+  font-size: 14px;
+}
+
+button:disabled {
+  background: #b9bdca;
+  cursor: not-allowed;
+}
+
+.top-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.workspace {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  padding: 20px;
+  min-height: calc(100vh - 70px);
+}
+
+.panel {
+  min-width: 0;
+  background: white;
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 0 3px 14px #0000000d;
+}
+
+.panel h2 {
+  margin-top: 0;
+}
+
+.hint {
+  color: #656b7b;
+  font-size: 13px;
+}
+
+textarea {
+  width: 100%;
+  min-height: 65vh;
+  resize: vertical;
+  padding: 14px;
+  border: 1px solid #cdd2df;
+  border-radius: 8px;
+  font: 15px/1.6 Consolas, monospace;
+  color: #202536;
+  background: #fbfcff;
+}
+
+.slide {
+  min-height: 55vh;
+  padding: 42px;
+  border-radius: 10px;
+  background: white;
+  border: 1px solid #e0e4ee;
+  overflow-wrap: anywhere;
+}
+
+.slide h1 {
+  color: #3949ab;
+  font-size: clamp(28px, 4vw, 44px);
+}
+
+.slide h2 {
+  color: #5b6477;
+}
+
+.slide li {
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+#slideCount,
+#presentationCount {
+  font-weight: bold;
+  min-width: 60px;
+  text-align: center;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.presentation {
+  min-height: 100vh;
+  padding: 24px;
+  background: #171a25;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.presentation-slide {
+  width: min(1100px, 100%);
+  min-height: 70vh;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(24px, 6vw, 80px);
+}
+
+.presentation-controls {
+  margin-bottom: 10px;
+}
+
+@media (max-width: 800px) {
+  .workspace {
+    grid-template-columns: 1fr;
+  }
+
+  textarea {
+    min-height: 300px;
+  }
+
+  .topbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .slide {
+    padding: 24px;
+  }
+}

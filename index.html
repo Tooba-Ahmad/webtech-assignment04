@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Markdown Slide Maker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="topbar">
+    <h1>Markdown Slide Maker</h1>
+    <div class="top-actions">
+      <button id="saveBtn">Save Slides</button>
+      <button id="presentBtn">Present</button>
+    </div>
+  </header>
+
+  <main id="editorPage" class="workspace">
+    <section class="panel editor-panel">
+      <h2>Markdown Editor</h2>
+      <p class="hint">
+        Use --- on a separate line to start a new slide.
+      </p>
+
+      <textarea id="markdownInput" spellcheck="false"># Welcome to My Presentation
+## Made with Markdown
+
+Write slide content here.
+
+---
+
+# Slide Two
+## Features
+
+- Create slides
+- Edit slides
+- Save slides in browser
+
+---
+
+# Slide Three
+## Thank You!
+
+Press Present to start the slideshow.</textarea>
+    </section>
+
+    <section class="panel preview-panel">
+      <h2>Live Preview</h2>
+      <div id="slidePreview" class="slide"></div>
+
+      <div class="controls">
+        <button id="prevBtn">← Previous</button>
+        <span id="slideCount">1 / 3</span>
+        <button id="nextBtn">Next →</button>
+        <button id="fullBtn">Full Screen</button>
+      </div>
+    </section>
+  </main>
+
+  <main id="presentationPage" class="presentation hidden">
+    <div id="presentationSlide" class="slide presentation-slide"></div>
+
+    <div class="controls presentation-controls">
+      <button id="presentPrevBtn">← Previous</button>
+      <span id="presentationCount">1 / 3</span>
+      <button id="presentNextBtn">Next →</button>
+      <button id="exitBtn">Exit Presentation</button>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
